@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TH_Harmic.Models.TbProduct>
+
+@foreach (var item in Model)
+{
+    string sUrl = $"/product/{item.Alias}-{item.ProductId}.html";
+    <div class="col-xl-4 col-lg-4 col-sm-6">
+        <div class="product-item">
+            <div class="product-img img-zoom-effect">
+                <a href="@sUrl">
+                    <img class="img-full" src="@item.Image" alt="Product Images">
+                </a>
+                <div class="product-add-action">
+                    <ul>
+                       
+                            <li>
+                                <a href="cart.html">
+                                    <i class="pe-7s-cart"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-content">
+                <a class="product-name" href="@sUrl">@item.Title</a>
+                <div class="price-box pb-1">
+                    @if(item.PriceSale==0)
+                    {
+                        <span class="new-price">@item.PriceSale</span> <span>$</span>
+                    }
+                    else
+                    {
+                        <span class="new-price">@item.PriceSale</span> <span>$</span>
+                        <span class="new-price">@item.Price</span> <span>$</span>
+                    }
+                </div>
+                <div class="rating-box">
+                    <ul>
+                        @for (int i = 1; i <= item.Star; i++)
+                        {
+                            <li><i class="pe-7s-star"></i></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}

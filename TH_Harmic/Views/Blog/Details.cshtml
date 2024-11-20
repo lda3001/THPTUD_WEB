@@ -1,0 +1,144 @@
+﻿@model TbBlog
+@{
+    List<TbBlogComment> blogComment = ViewBag.blogComment;
+}
+
+
+<!-- Begin Main Content Area -->
+<main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/1-1-1920x373.jpg">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading">Blog Layout</h2>
+                        <ul>
+                            <li>
+                                <a href="index.html">Home <i class="pe-7s-angle-right"></i></a>
+                            </li>
+                            <li>Blog Detail Default</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area section-space-y-axis-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-detail-item">
+                        <div class="blog-img">
+                            <img class="img-full" src="@Model.Image" alt="Blog Image">
+                        </div>
+                        <div class="blog-content text-start pb-0">
+                            <div class="blog-meta text-dim-gray pb-3">
+                                <ul>
+                                    <li class="date"><i class="fa fa-calendar-o me-2"></i>@Model.CreatedDate.Value.ToString("dd/MM/yyyy")</li>
+                                    <li>
+                                        <span class="comments me-3">
+                                            <a href="javascript:void(0)">@blogComment.Count()</a>
+                                        </span>
+                                        <span class="link-share">
+                                            <a href="javascript:void(0)">Share</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h5 class="title mb-4">
+                                <a href="blog-detail-left-sidebar.html">@Model.Title</a>
+                            </h5>
+                          @Html.Raw(Model.Detail)
+                            <div class="tag-wtih-social">
+                                <div class="tag">
+                                    <span class="title text-primary">Tags:</span>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)">Furniture,</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Electronic,</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Fashion</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="social-link">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="fa fa-pinterest-p"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="fa fa-dribbble"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="blog-comment pt-10">
+                                <h4 class="heading mb-7">@blogComment.Count()</h4>
+                                @foreach (var item in blogComment)
+                                {
+                                    <div class="blog-comment-item mb-8">
+                                        <div class="blog-comment-img">
+                                            <img src="assets/images/avatar/1.jpg" alt="Avatar">
+                                        </div>
+                                        <div class="blog-comment-content">
+                                            <div class="user-meta">
+                                                <span><strong>@item.Name</strong> @item.CreatedDate.Value.ToString("dd/MM/yyyy")</span>
+                                                <a class="btn btn-link hover-white d-none d-md-flex" href="javascript:void(0)">
+                                                    <i class="fa fa-reply me-2"></i>
+                                                    Reply
+                                                </a>
+                                            </div>
+                                            <span class="user-occupation text-primary">Web Developer</span>
+                                            <p class="user-comment mb-0">@item.Detail</p>
+                                            <a class="btn btn-link hover-white d-inline-flex d-md-none mt-5" href="javascript:void(0)">
+                                                <i class="fa fa-reply me-2"></i>
+                                                Reply
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+                              
+                               
+                            </div>
+                            <div class="feedback-area section-space-top-55">
+                                <h4 class="heading mb-1">Leave a comment</h4>
+                                <form class="feedback-form pt-8" action="#">
+                                    <div class="group-input">
+                                        <div class="form-field me-md-6 mb-6 mb-md-0">
+                                            <input type="text" name="name" placeholder="Your Name*" class="input-field">
+                                        </div>
+                                        <div class="form-field me-md-6 mb-6 mb-md-0">
+                                            <input type="text" name="email" placeholder="Your Email*" class="input-field">
+                                        </div>
+                                        <div class="form-field">
+                                            <input type="text" name="number" placeholder="Phone number" class="input-field">
+                                        </div>
+                                    </div>
+                                    <div class="form-field mt-6">
+                                        <textarea name="message" placeholder="Message" class="textarea-field"></textarea>
+                                    </div>
+                                    <div class="button-wrap mt-8">
+                                        <button type="submit" value="submit" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover btn-lg rounded-0" name="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Main Content Area End Here -->

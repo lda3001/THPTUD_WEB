@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TH_Harmic.Models.TbBlog>
+
+@foreach (var item in Model)
+{
+    string url = $"blog/{item.Alias}-{item.BlogId}.html";
+    <div class="swiper-slide">
+        <div class="blog-item">
+            <div class="blog-img img-zoom-effect">
+                <a href="@url">
+                    <img class="img-full" src="@item.Image" alt="Blog Image">
+                </a>
+            </div>
+            <div class="blog-content">
+                <div class="blog-meta text-dim-gray pb-3">
+                    <ul>
+                        <li class="date"><i class="fa fa-calendar-o me-2"></i>May 21, 2021</li>
+                        <li>
+                            <span class="comments me-3">
+                                <a href="javascript:void(0)">2 Comments</a>
+                            </span>
+                            <span class="link-share">
+                                <a href="javascript:void(0)">Share</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <h5 class="title mb-4">
+                    <a href="@url">@item.Title</a>
+                </h5>
+                <p class="short-desc mb-5">@item.Description</p>
+                <div class="button-wrap">
+                    <a class="btn btn-custom-size btn-dark btn-lg rounded-0" href="@url">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
