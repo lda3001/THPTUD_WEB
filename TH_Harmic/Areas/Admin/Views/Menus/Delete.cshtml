@@ -1,0 +1,88 @@
+﻿@model TbMenu
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Xoá Menu</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">General Form</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Xoá Menu</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+
+                        <div class="card-body">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail">Tiêu đề:</label>
+                                @Html.DisplayFor(model => model.Title)
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Alias:</label>
+                                @Html.DisplayFor(model => model.Alias)
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Mô tả:</label>
+                                @Html.DisplayFor(model => model.Description)
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Mức:</label>
+                                @Html.DisplayFor(model => model.Levels)
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Menucha:</label>
+                                @Html.DisplayFor(model => model.ParentId)
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Hiện:</label>
+                                @Html.DisplayFor(model => model.IsActive)
+                            </div>
+                            @* <div class="form-group" clas="form-check">
+                            <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IsActive" /> Hiển thị
+                            </label>
+                            </div> *@
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="MenuId" />
+                                <input type="submit" value="Xoá" class="btn btn-danger" />
+                                <a asp-action="Index" class="btn btn-primary">Quay lại</a>
+                            </form>
+
+
+
+                        </div>
+                        <!-- /.card -->
+
+
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

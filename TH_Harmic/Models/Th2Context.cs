@@ -161,8 +161,8 @@ public partial class Th2Context : DbContext
         modelBuilder.Entity<TbMenu>(entity =>
         {
             entity
-                .HasNoKey()
-                .ToTable("tb_Menu");
+                .HasKey(e => e.MenuId);
+                entity.ToTable("tb_Menu");
 
             entity.Property(e => e.Alias).HasMaxLength(150);
             entity.Property(e => e.CreatedBy).HasMaxLength(150);
