@@ -1,0 +1,92 @@
+﻿@model TH_Harmic.Models.TbProduct
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sủa sản phẩm</h1>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Sửa sản phẩm</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">General Form</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Sửa sản phẩm</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form asp-action="Edit">
+                            <input type="hidden" asp-for="ProductId" />
+                            <div class="card-body">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Title" class="control-label">Tiêu đề</label>
+                                    <input asp-for="Title" class="form-control" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Alias" class="control-label"></label>
+                                    <input asp-for="Alias" class="form-control" />
+                                    <span asp-validation-for="Alias" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CategoryProductId" class="control-label">Danh mục</label>
+                                    <select asp-for="CategoryProductId" class="form-control" asp-items="ViewBag.CategoryProductId">
+                                        <option value="0" selected>--[Chọn danh mục]--</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Image" class="control-label">Ảnh</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-success" onclick="openDialog()">Choose a picture</button>
+                                        </div>
+                                        <!--btn group-->
+                                        <input type="text" class="form-control " id="file_input" asp-for="Image" aria-describedby="button" />
+                                    </div>
+                                </div>
+                                <script>
+                                    function openDialog() {
+                                        document.getElementById("file_input").click();
+                                    }
+                                </script>
+
+                                <div class="card-footer">
+                                    <button type="submit" value="Sửa" class="btn btn-primary">Sửa</button>
+                                </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+

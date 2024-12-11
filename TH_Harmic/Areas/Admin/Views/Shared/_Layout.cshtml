@@ -25,6 +25,11 @@
   <link rel="stylesheet" href="~/admin/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="~/admin/plugins/summernote/summernote-bs4.min.css">
+    <script src="~/admin/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    @RenderSection("Style", required: false)
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -865,12 +870,13 @@
   </aside>
   <!-- /.control-sidebar -->
 </div>
+    @RenderSection("Scripts", required: false)
 <!-- ./wrapper -->
-    @await RenderSectionAsync("Scripts", required: false)
+   
 <!-- jQuery -->
-<script src="~/admin/plugins/jquery/jquery.min.js"></script>
+@* <script src="~/admin/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="~/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="~/admin/plugins/jquery-ui/jquery-ui.min.js"></script> *@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
