@@ -130,8 +130,8 @@ public partial class Th2Context : DbContext
         modelBuilder.Entity<TbContact>(entity =>
         {
             entity
-                .HasNoKey()
-                .ToTable("tb_Contact");
+                .HasKey(e => e.ContactId);
+            entity.ToTable("tb_Contact");
 
             entity.Property(e => e.ContactId).ValueGeneratedOnAdd();
             entity.Property(e => e.CreatedBy).HasMaxLength(150);

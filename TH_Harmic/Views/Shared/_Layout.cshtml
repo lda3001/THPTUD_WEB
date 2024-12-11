@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="~/assets/css/plugins/swiper-bundle.min.css">
     <link rel="stylesheet" href="~/assets/css/plugins/nice-select.css">
     <link rel="stylesheet" href="~/assets/css/plugins/magnific-popup.min.css" />
+    <link href="~/assets/toastr/toastr.css" rel="stylesheet" />
+    
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="~/assets/css/style.css">
@@ -659,6 +661,9 @@
 
     <!--Main JS (Common Activation Codes)-->
     <script src="~/assets/js/main.js"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script src="~/assets/toastr/toastr.min.js"></script>
 
 </body>
 
