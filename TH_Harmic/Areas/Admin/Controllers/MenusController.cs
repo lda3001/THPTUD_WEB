@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,8 @@ using TH_Harmic.Models;
 namespace TH_Harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class MenusController : Controller
+    [Authorize]
+    public class MenusController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly Th2Context _context;
 

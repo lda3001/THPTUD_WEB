@@ -30,7 +30,8 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form asp-controller="Login" asp-action="Index" method="post">
+                <form asp-controller="Account" asp-action="Login" method="post">
+
                     <div class="input-group mb-3">
                         <input type="email" asp-for="Email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
@@ -47,9 +48,10 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
                     <div class="input-group mb-3">
                         <h6>
-                            @Function.msg;
+                            @Function.msg
                         </h6>
                     </div>
                     <div class="row">
@@ -84,7 +86,7 @@
                     <a href="forgot-password.html">I forgot my password</a>
                 </p>
                 <p class="mb-0">
-                    <a asp-controller="Register" asp-action="Index" class="text-center">Register a new membership</a>
+                    <a asp-controller="Account" asp-action="Register" class="text-center">Register a new membership</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

@@ -8,7 +8,7 @@ namespace TH_Harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("/Admin/el-finder-file-system")]
-    public class FileSystemController : Controller
+    public class FileSystemController : Microsoft.AspNetCore.Mvc.Controller
     {
         IWebHostEnvironment _env;
         public FileSystemController(IWebHostEnvironment env) => _env = env;

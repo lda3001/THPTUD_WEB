@@ -12,6 +12,7 @@ using TH_Harmic.Utilities;
 namespace Harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    
     public class ProductsController : Controller
     {
         private readonly Th2Context  _context;

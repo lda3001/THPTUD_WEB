@@ -29,7 +29,7 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Register a new membership</p>
 
-                <form asp-controller="Register" asp-action="Index" method="post">
+                <form asp-controller="Account" asp-action="Register" method="post">
                     <div class="input-group mb-3">
                         <input type="text" asp-for="FullName" class="form-control" placeholder="Full name">
                         <div class="input-group-append">
@@ -98,8 +98,8 @@
                         Sign up using Google+
                     </a>
                 </div>
-
-                <a href="login.html" class="text-center">I already have a membership</a>
+                <a asp-controller="Account" asp-action="Login" class="text-center">I already have a membership</a>
+                
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

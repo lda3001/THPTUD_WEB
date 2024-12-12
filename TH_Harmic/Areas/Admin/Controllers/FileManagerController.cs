@@ -3,7 +3,7 @@
 namespace TH_Harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class FileManagerController : Controller
+    public class FileManagerController : Microsoft.AspNetCore.Mvc.Controller
     {
         public IActionResult Index()
         {
