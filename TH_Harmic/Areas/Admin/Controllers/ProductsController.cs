@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +13,7 @@ using TH_Harmic.Utilities;
 namespace Harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly Th2Context  _context;
